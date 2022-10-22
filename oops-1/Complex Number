@@ -1,0 +1,84 @@
+
+class ComplexNumbers {
+    private int real;
+    private int imaginary;
+    
+    public ComplexNumbers(int real, int imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+    
+    public int getReal(int real) {
+        return this.real;
+    }
+    
+    public int getImaginary(int imaginary) {
+        return this.imaginary;
+    }
+    
+    public void setReal(int real) {
+        this.real = real;
+    }
+    
+    public void setImaginary(int imaginary) {
+        this.imaginary = imaginary;
+    }
+    
+    public void add(ComplexNumbers c1) {
+        this.real += c1.real;
+        this.imaginary += c1.imaginary;
+    }
+    
+    public void mul(ComplexNumbers c1) {
+        int newReal = (c1.real * this.real) - (c1.imaginary * this.imaginary);
+        int newImaginary = (this.real * c1.imaginary) + (this.imaginary * c1.real) ;
+        this.real = newReal;
+        this.imaginary = newImaginary;
+    }
+    
+    public static ComplexNumbers add(ComplexNumbers c1, ComplexNumbers c2) {
+        int newReal = c1.real + c2.real;
+        int newImaginary = c1.imaginary + c2.imaginary;
+        ComplexNumbers c = new ComplexNumbers(newReal, newImaginary);
+        return c;
+    }
+    
+    public static ComplexNumbers mul(ComplexNumbers c1, ComplexNumbers c2) {
+        int newReal = c1.real * c2.real;
+        int newImaginary = c1.imaginary * c2.imaginary;
+        ComplexNumbers c = new ComplexNumbers(newReal, newImaginary);
+        return c;
+    }
+    
+    public void print() {
+        System.out.print(this.real+" + i"+this.imaginary);
+    }
+    
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        ComplexNumbers c1 = new ComplexNumbers(3, 6);
+        c1.print();
+        
+        c1.setReal(10);
+        c1.setImaginary(6);
+        c1.print();
+        
+        ComplexNumbers c2 = new ComplexNumbers(7, 9);
+        c1.add(c2);
+        c1.print();
+        
+        ComplexNumbers c3 = new ComplexNumbers(5,3);
+        c2.mul(c3);
+        c2.print();
+        
+        ComplexNumbers c4 = ComplexNumbers.add(c2,c3);
+        c4.print();
+        
+        ComplexNumbers c5 = ComplexNumbers.mul(c3,c4);
+        c5.print();
+        
+    }
+}
