@@ -6,8 +6,11 @@ class Fraction{
     
     public Fraction(int numerator, int denominator) throws Exception {
         if(denominator == 0){
-            Exception e = new Exception("Denominator cont be 0");
-            throw e;
+        
+            throw new Exception();
+        
+            // Exception e = new Exception("Denominator cont be 0");
+            // throw e;
         }
         this.numerator = numerator;
         this.denominator = denominator;
