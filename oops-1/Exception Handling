@@ -107,8 +107,9 @@ class HelloWorld {
             f1.print(); //2/3
         } catch(Exception e) {
             System.out.println("Hey don't input 0 as denominator");
+        } finally {
+            // common code write  here in (try & catch)
         }
-        
         
     }
 }
