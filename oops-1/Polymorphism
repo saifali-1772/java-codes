@@ -1,0 +1,127 @@
+// 
+class vehical {
+    protected String color; // this use a
+    private int maxSpeed;
+    
+    public vehical() {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public vehical(String color, int maxSpeed) {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+    
+    public void print() {
+        System.out.println("Color : " + color);
+        System.out.println("Max Speed : " + maxSpeed);
+    }
+}
+
+class car extends vehical {
+    int numGear;
+    boolean isConvartable;
+    
+    public car() { }
+    
+    public car(int numGear, boolean isConvartable) {
+        this.numGear = numGear;
+        this.isConvartable = isConvartable;
+    }
+    
+    public car(int numGear, boolean isConvartable, String color, int maxSpeed) {
+        super(color, maxSpeed);
+        this.numGear = numGear;
+        this.isConvartable = isConvartable;
+    }
+    
+    public void getIsConvartable() {
+        System.out.println("IsConvartable : " + isConvartable);
+    }
+    
+    public void print() {
+        super.print();
+        System.out.println("Gear : " + numGear);
+        System.out.println("Convartable : " + isConvartable);
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        // System.out.println("Hello, World!");
+        
+        vehical v = new car(5, true);
+        v.print();
+        v.getIsConvartable();
+    }
+}
+
+
+// ------------------------------- Ex-2 -------------------------------------------
+
+// Java Program for Method Overriding
+
+// Class 1
+// Helper class
+class Parent {
+
+	// Method of parent class
+	void Print()
+	{
+
+		// Print statement
+		System.out.println("parent class");
+	}
+}
+
+// Class 2
+// Helper class
+class subclass1 extends Parent {
+
+	// Method
+	void Print() { System.out.println("subclass1"); }
+}
+
+// Class 3
+// Helper class
+class subclass2 extends Parent {
+
+	// Method
+	void Print()
+	{
+
+		// Print statement
+		System.out.println("subclass2");
+	}
+}
+
+// Class 4
+// Main class
+class GFG {
+
+	// Main driver method
+	public static void main(String[] args)
+	{
+
+		// Creating object of class 1
+		Parent a;
+
+		// Now we will be calling print methods
+		// inside main() method
+
+		a = new subclass1();
+		a.Print();
+
+		a = new subclass2();
+		a.Print();
+	}
+}
