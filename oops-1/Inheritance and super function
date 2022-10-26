@@ -1,0 +1,68 @@
+class vehical {
+    protected String color; // this use a
+    private int maxSpeed;
+    
+    public vehical() {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public vehical(String color, int maxSpeed) {
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+    
+    public void print() {
+        System.out.println("Color : " + color);
+        System.out.println("Max Speed : " + maxSpeed);
+    }
+}
+
+class car extends vehical {
+    int numGear;
+    boolean isConvartable;
+    
+    public car() { }
+    
+    public car(int numGear, boolean isConvartable) {
+        this.numGear = numGear;
+        this.isConvartable = isConvartable;
+    }
+    
+    public car(int numGear, boolean isConvartable, String color, int maxSpeed) {
+        super(color, maxSpeed);
+        this.numGear = numGear;
+        this.isConvartable = isConvartable;
+    }
+    
+    public void print() {
+        super.print();
+        // System.out.println("Color : " + color);
+        // System.out.println("Max Speed : " + getMaxSpeed());
+        System.out.println("Gear : " + numGear);
+        System.out.println("Convartable : " + isConvartable);
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        // car c = new car();
+        // c.numGear = 5;
+        // c.isConvartable = true;
+        // c.color = "Red";
+        // c.setMaxSpeed(140);
+        // c.print();
+        
+        car c1 = new car(5, true, "Red", 150);
+        c1.print();
+        
+    }
+}
