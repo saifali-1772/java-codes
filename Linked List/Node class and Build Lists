@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class llDemo<Temp> {
+    Temp data;
+    llDemo<Temp> next;
+    
+    llDemo(Temp data) {
+        this.data = data;
+        next = null;
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        // System.out.println("Hello, World!");
+        
+        llDemo<Integer> list1 = new llDemo<>(10);
+        System.out.println(list1.data);
+        System.out.println(list1.next);
+        
+        llDemo<Integer> list2 = new llDemo<>(20);
+        list1.next = list2;
+        
+        System.out.println(list1.next);
+        System.out.println(list2);
+    }
+}
