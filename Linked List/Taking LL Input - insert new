@@ -31,19 +31,39 @@ class HelloWorld {
         return head;
     }
     
+    public static Node<Integer> insert(Node<Integer> head, int data, int pn) {
+        
+        Node<Integer> newNode = new Node<Integer>(data);
+        int i = 0;
+        
+        if(pn == 0) {
+            newNode.next = head;
+            return newNode;
+        }
+        
+        Node<Integer> temp = head;
+        while(i < pn-1) {
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+        return head;
+    }
+    
     public static void print(Node<Integer> head) {
         Node<Integer> temp = head;
-        
+            
         while(temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
-        
     }
     
     public static void main(String[] args) {
         
         Node<Integer> head = input();
+        head = insert(head, 70, 0);
         print(head);
         
         // Node<Integer> node1 = new Node<Integer>(10);
